@@ -280,3 +280,198 @@ Pearson correlation testing produced the following results:
 | Stringency vs Cases | 0.003 |
 
 The results suggest that positivity rate and government intervention measures were statistically associated with reported case counts during the study period.
+
+## Multiple Regression Analysis
+
+Multiple linear regression was used to examine the combined effects of testing activity, positivity rate, and government intervention measures on reported COVID-19 case counts.
+
+### Model Performance
+
+| Metric | Value |
+|----------|----------|
+| R² | 0.246 |
+| Adjusted R² | 0.225 |
+| F-statistic p-value | < 0.001 |
+
+The model explained approximately 24.6% of the variation in daily COVID-19 case counts.
+
+### Regression Results
+
+| Predictor | Coefficient | p-value |
+|------------|------------|----------|
+| New Tests | 0.0445 | 0.011 |
+| Positive Rate | 1790.31 | < 0.001 |
+| Stringency Index | -11.60 | 0.059 |
+
+### Interpretation
+
+The positivity rate emerged as the strongest predictor of COVID-19 transmission.
+
+Testing volume demonstrated a statistically significant positive association with reported cases, suggesting that increased testing activity contributed to increased case detection.
+
+Government stringency measures exhibited a negative relationship with case counts, indicating that stronger interventions were generally associated with lower transmission levels. However, the effect narrowly missed conventional statistical significance at the 5% level.
+
+### Supporting Visualizations
+
+![Testing vs Cases](figures/tests_vs_cases.png)
+
+![Positivity Rate vs Cases](figures/positivity_vs_cases.png)
+
+![Stringency vs Cases](figures/stringency_vs_cases.png)
+
+
+## Key Findings
+
+The analysis produced several important findings regarding COVID-19 transmission dynamics in Ghana.
+
+### Surveillance Findings
+
+- 67 warning signals were detected.
+- 14 alert signals were identified.
+- Alert signals represented 7.61% of all surveillance observations.
+- Warning signals represented 36.41% of observations.
+- The longest alert period lasted three consecutive days.
+
+### Risk Classification Findings
+
+- Low Risk: 42.11%
+- Moderate Risk: 18.71%
+- High Risk: 30.99%
+- Critical Risk: 8.19%
+
+### Statistical Findings
+
+- Positivity rate showed the strongest association with COVID-19 case counts.
+- Testing volume alone showed little direct correlation with transmission levels.
+- Government intervention measures demonstrated a negative relationship with reported cases.
+- Multiple regression identified positivity rate as the most influential predictor in the model.
+
+### Public Health Findings
+
+The results suggest that positivity rate may serve as a valuable indicator for monitoring disease transmission and identifying emerging outbreaks.
+
+The surveillance framework successfully identified periods of elevated transmission and demonstrated how statistical monitoring tools can support outbreak detection and response.
+
+## Public Health Recommendations
+
+Based on the findings of this study, several recommendations emerge.
+
+### Strengthen Positivity Rate Monitoring
+
+Positivity rate demonstrated the strongest association with reported case counts and should remain a key surveillance indicator during infectious disease monitoring.
+
+### Maintain Statistical Surveillance Systems
+
+Rolling averages, warning thresholds, and alert thresholds provide practical tools for identifying unusual transmission patterns and supporting early intervention.
+
+### Improve Data Completeness
+
+Missing testing observations reduced the amount of information available for statistical modeling. Improving data completeness would strengthen future surveillance efforts.
+
+### Support Evidence-Based Decision-Making
+
+Statistical monitoring systems should complement traditional epidemiological approaches by providing objective and timely indicators of disease activity.
+
+### Expand the Framework
+
+The surveillance methodology developed in this project can be adapted to monitor other infectious diseases and public health events.
+
+## Repository Structure
+
+```text
+COVID-19-Statistical-Surveillance-System
+│
+├── README.md
+│
+├── notebooks
+│   ├── 01_Data_Acquisition.ipynb
+│   ├── 02_Data_Cleaning.ipynb
+│   ├── 03_Exploratory_Data_Analysis.ipynb
+│   ├── 04_Surveillance_Framework.ipynb
+│   ├── 05_Early_Warning_System.ipynb
+│   └── 06_Driver_and_Policy_Analysis.ipynb
+│
+├── figures
+│
+├── data
+│
+├── reports
+│
+└── requirements.txt
+
+
+---
+
+# README Section 13: Technologies Used
+
+```markdown
+## Technologies Used
+
+### Programming Language
+
+- Python
+
+### Data Analysis
+
+- pandas
+- NumPy
+
+### Statistical Analysis
+
+- SciPy
+- Statsmodels
+
+### Visualization
+
+- Matplotlib
+- Seaborn
+
+### Development Environment
+
+- Google Colab
+- Jupyter Notebook
+
+### Version Control
+
+- Git
+- GitHub
+
+## Future Research Directions
+
+Several opportunities exist for extending this work.
+
+### Advanced Time-Series Modeling
+
+Future studies could incorporate ARIMA, state-space models, or Bayesian time-series approaches to improve forecasting accuracy.
+
+### Spatial Surveillance
+
+Regional-level COVID-19 data could be integrated to investigate spatial transmission patterns and geographic clustering.
+
+### Machine Learning Approaches
+
+Machine learning techniques may provide additional insights into outbreak prediction and anomaly detection.
+
+### Real-Time Monitoring Dashboard
+
+The framework could be deployed as an interactive dashboard to support continuous monitoring and decision-making.
+
+### Multi-Disease Surveillance
+
+The methodology may be adapted for monitoring influenza, cholera, malaria, and other infectious diseases.
+
+## References
+
+1. World Health Organization (WHO). Public Health Surveillance for COVID-19: Interim Guidance. Geneva: WHO, 2022.
+
+2. World Health Organization (WHO). End-to-End Integration of SARS-CoV-2 and Influenza Sentinel Surveillance: Revised Interim Guidance. Geneva: WHO, 2022.
+
+3. Our World in Data. COVID-19 Dataset Documentation.
+
+4. Hasell J, Mathieu E, Beltekian D, et al. A Cross-Country Database of COVID-19 Testing. Scientific Data. 2020;7(345).
+
+5. Mathieu E, Ritchie H, Ortiz-Ospina E, et al. A Global Database of COVID-19 Vaccinations. Nature Human Behaviour. 2021.
+
+6. World Health Organization (WHO). Public Health Surveillance for COVID-19: Interim Guidance, 2022.
+
+7. World Health Organization (WHO). Environmental Surveillance for SARS-CoV-2 to Complement Public Health Surveillance. Geneva: WHO, 2022.
